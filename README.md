@@ -66,11 +66,11 @@ RabbitMQ administrative interface is available here: http://localhost:15672/
 
 As an example, we will use a simple workflow that receives a message from RabbitMQ and sends an Email notification:
 
-<img width="593" alt="Screenshot 2023-12-11 at 21 53 35" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/9d4ae78f-fc8a-4906-b20f-284e037f26b1">
+<img width="593" alt="Screenshot 2023-12-11 at 21 53 35" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/7b6682b8-cfaa-45e4-8a35-da9e5ffbdeda">
 
 Notification task:
 
-<img width="783" alt="Screenshot 2023-12-11 at 21 58 51" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/e697221f-d169-494b-9839-85152618487d">
+<img width="783" alt="Screenshot 2023-12-11 at 21 58 51" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/52472292-879c-483a-956d-d7db875babcd">
 
 ## 2. Send test message to the producer API:
 
@@ -87,19 +87,19 @@ API Endpoint expects the POST request with the JSON body
 
 **Valid input**
 
-<img width="857" alt="Screenshot 2023-12-11 at 21 55 13" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/6838ea60-7ec1-44cf-94bb-8c7e1e6793dd">
+<img width="857" alt="Screenshot 2023-12-11 at 21 55 13" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/518fb0dd-9fcc-49ef-8a5c-a413a35f60e0">
 
 **Invalid input. Validation error is returned**
 
-<img width="863" alt="Screenshot 2023-12-11 at 21 55 29" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/c99e5206-4f81-44fc-83ab-9bcfd36da5f2">
+<img width="863" alt="Screenshot 2023-12-11 at 21 55 29" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/5ba1719a-a7a9-4021-97a0-944650c988da">
 
 ## 3. Check CLI output to make sure it was received by the producer and consumed
 
-<img width="1207" alt="Screenshot 2023-12-11 at 21 56 43" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/79384a41-3459-4223-b5cf-191b587bd1b1">
+<img width="1207" alt="Screenshot 2023-12-11 at 21 56 43" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/a0169217-ffed-4ef8-85c5-b79d9e7b4983">
 
 ## 4. Check you Email inbox and confirm that the message is received
 
-<img width="330" alt="Screenshot 2023-12-11 at 21 59 20" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/36234cbb-d7f2-4e80-8523-d1262103c7e7">
+<img width="330" alt="Screenshot 2023-12-11 at 21 59 20" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/5e2aea30-eebc-4098-ae75-7681ade03eee">
 
 # Full documentation
 
