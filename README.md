@@ -1,5 +1,5 @@
 # datamin-rabbitmq-consumer
-Golang-based RabbitMQ consumer to consume messages from your queues, forward messages to Datamin workflows, and trigger them in real-time.
+Golang-based RabbitMQ consumer to consume messages from your queues, forward messages to Datamin pipelines, and trigger them in real-time.
 
 # Usage
 
@@ -12,7 +12,7 @@ Create the new `.env` and copy the content from `.env.dist` to it and then add y
 * DATAMIN_API_CLIENT_ID - API Client ID. Here is how to create it: https://docs.datamin.io/datamin-api/oauth-clients
 * DATAMIN_API_CLIENT_SECRET - API Client Secret. Here is how to create it: https://docs.datamin.io/datamin-api/oauth-clients
 * QUEUE_NAME - Queue name, the consumer should listen to
-* WORKFLOW_UUID - UUID of the workflow to trigger in case of the new messages in the queue
+* WORKFLOW_UUID - UUID of the pipeline to trigger in case of the new messages in the queue
 
 For example:
 ```
@@ -62,9 +62,9 @@ RabbitMQ administrative interface is available here: http://localhost:15672/
 
 # Test flow 
 
-## 1. Create the workflow
+## 1. Create the pipeline
 
-As an example, we will use a simple workflow that receives a message from RabbitMQ and sends an Email notification:
+As an example, we will use a simple pipeline that receives a message from RabbitMQ and sends an Email notification:
 
 <img width="593" alt="Screenshot 2023-12-11 at 21 53 35" src="https://github.com/datamin-io/datamin-rabbitmq-consumer/assets/346908/7b6682b8-cfaa-45e4-8a35-da9e5ffbdeda">
 
