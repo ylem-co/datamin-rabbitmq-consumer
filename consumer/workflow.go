@@ -19,7 +19,7 @@ type workflowClient struct {
 }
 
 func (c *workflowClient) RunWorkflow(workflowUuid string, payload []byte) (string, error) {
-	log.Tracef("Running a workflow, UUID: %s", workflowUuid)
+	log.Tracef("Running a pipeline, UUID: %s", workflowUuid)
 	t, err := c.oauthClient.GetToken()
 	if err != nil {
 		return "", err
@@ -27,7 +27,7 @@ func (c *workflowClient) RunWorkflow(workflowUuid string, payload []byte) (strin
 
 	log.Trace("Succcessfully obtained OAuth token")
 
-	url := fmt.Sprintf("/v1/workflows/%s/runs/", workflowUuid)
+	url := fmt.Sprintf("/v1/pipelines/%s/runs/", workflowUuid)
 	resp, err := c.apiClient.
 		R().
 		SetAuthToken(t.AccessToken).
@@ -46,7 +46,7 @@ func (c *workflowClient) RunWorkflow(workflowUuid string, payload []byte) (strin
 		return "", fmt.Errorf("unexpected http status code: %d", resp.StatusCode())
 	}
 
-	log.Trace("Workflow run initiated successfully")
+	log.Trace("Pipeline run initiated successfully")
 
 	result := struct {
 		WorkflowRunUuid string `json:"workflow_run_uuid"`
