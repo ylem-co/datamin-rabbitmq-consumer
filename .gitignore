@@ -11,3 +11,6 @@ tmp/
 # Env
 .env
 .env.local
+
+consumer/consumer
+producer/producer

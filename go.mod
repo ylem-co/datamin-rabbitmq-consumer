@@ -1,4 +1,4 @@
-module datamin-rabbitmq-consumer
+module ylem-rabbitmq-consumer
 
 go 1.21
 

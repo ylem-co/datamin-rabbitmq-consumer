@@ -10,10 +10,10 @@ import (
 func main() {
     amqpServerURL := os.Getenv("AMQP_SERVER_URL")
     queueName := os.Getenv("QUEUE_NAME")
-    workflowUuid := os.Getenv("WORKFLOW_UUID")
-    apiUrl := os.Getenv("DATAMIN_API_URL")
-    apiClientID := os.Getenv("DATAMIN_API_CLIENT_ID")
-    apiClientSecret := os.Getenv("DATAMIN_API_CLIENT_SECRET")
+    workflowUuid := os.Getenv("PIPELINE_UUID")
+    apiUrl := os.Getenv("YLEM_API_URL")
+    apiClientID := os.Getenv("YLEM_API_CLIENT_ID")
+    apiClientSecret := os.Getenv("YLEM_API_CLIENT_SECRET")
 
     // Create a new RabbitMQ connection.
     connectRabbitMQ, err := amqp.Dial(amqpServerURL)

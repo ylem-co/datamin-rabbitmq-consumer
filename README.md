@@ -1,12 +1,12 @@
-# datamin-rabbitmq-consumer
-Golang-based RabbitMQ consumer to consume messages from your queues, forward messages to Datamin pipelines, and trigger them in real-time.
+# ylem-rabbitmq-consumer
+Golang-based RabbitMQ consumer to consume messages from your queues, forward messages to Ylem pipelines, and trigger them in real-time.
 
-![GitHub branch check runs](https://img.shields.io/github/check-runs/datamin-io/datamin-rabbitmq-consumer/main?color=green)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/datamin-io/datamin-rabbitmq-consumer?color=blue)
-<a href="https://github.com/datamin-io/datamin-rabbitmq-consumer?tab=Apache-2.0-1-ov-file">![Static Badge](https://img.shields.io/badge/license-Apache%202.0-blue)</a>
-<a href="https://datamin.io" target="_blank">![Static Badge](https://img.shields.io/badge/website-datamin.io-blue)</a>
-<a href="https://docs.datamin.io" target="_blank">![Static Badge](https://img.shields.io/badge/documentation-docs.datamin.io-blue)</a>
-<a href="https://join.slack.com/t/datamincommunity/shared_invite/zt-2nawzl6h0-qqJ0j7Vx_AEHfnB45xJg2Q" target="_blank">![Static Badge](https://img.shields.io/badge/community-join%20Slack-blue)</a>
+![GitHub branch check runs](https://img.shields.io/github/check-runs/ylem-co/ylem-rabbitmq-consumer/main?color=green)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/ylem-co/ylem-rabbitmq-consumer?color=black)
+<a href="https://github.com/datamin-io/datamin-rabbitmq-consumer?tab=Apache-2.0-1-ov-file">![Static Badge](https://img.shields.io/badge/license-Apache%202.0-black)</a>
+<a href="https://ylem.co" target="_blank">![Static Badge](https://img.shields.io/badge/website-ylem.co-black)</a>
+<a href="https://docs.datamin.io" target="_blank">![Static Badge](https://img.shields.io/badge/documentation-docs.datamin.io-black)</a>
+<a href="https://join.slack.com/t/datamincommunity/shared_invite/zt-2nawzl6h0-qqJ0j7Vx_AEHfnB45xJg2Q" target="_blank">![Static Badge](https://img.shields.io/badge/community-join%20Slack-black)</a>
 
 # Usage
 
@@ -14,21 +14,21 @@ Golang-based RabbitMQ consumer to consume messages from your queues, forward mes
 
 Create the new `.env` and copy the content from `.env.dist` to it and then add your values to the list of parameters:
 
-* AMQP_SERVER_URL - the URL or your Rabbit MQ server in the format of: `amqp://guest:guest@datamin-message-broker:5672/`
-* DATAMIN_API_URL - If you use the cloud version of Datamin, it is `https://api.datamin.io`, othervise add URL of your custom Datamin API instance here
-* DATAMIN_API_CLIENT_ID - API Client ID. Here is how to create it: https://docs.datamin.io/datamin-api/oauth-clients
-* DATAMIN_API_CLIENT_SECRET - API Client Secret. Here is how to create it: https://docs.datamin.io/datamin-api/oauth-clients
+* AMQP_SERVER_URL - the URL or your Rabbit MQ server in the format of: `amqp://guest:guest@ylem-message-broker:5672/`
+* YLEM_API_URL - If you use the cloud version of Ylem, it is `https://api.ylem.co`, othervise add URL of your custom Ylem API instance here
+* YLEM_API_CLIENT_ID - API Client ID. Here is how to create it: https://docs.datamin.io/datamin-api/oauth-clients
+* YLEM_API_CLIENT_SECRET - API Client Secret. Here is how to create it: https://docs.datamin.io/datamin-api/oauth-clients
 * QUEUE_NAME - Queue name, the consumer should listen to
-* WORKFLOW_UUID - UUID of the pipeline to trigger in case of the new messages in the queue
+* PIPELINE_UUID - UUID of the pipeline to trigger in case of the new messages in the queue
 
 For example:
 ```
-AMQP_SERVER_URL=amqp://guest:guest@datamin-message-broker:5672/ 
-DATAMIN_API_URL=https://api.datamin.io
-DATAMIN_API_CLIENT_ID=be48d317-924c-4b1c-809a-026638e447b7
-DATAMIN_API_CLIENT_SECRET=cfa9dd5e33cd8b2f0f604d94b5gggipgyggggguje2cefb
-QUEUE_NAME=datamin_queue
-WORKFLOW_UUID=2c334d54-c807-4629-99eb-a4def2455557
+AMQP_SERVER_URL=amqp://guest:guest@ylem-message-broker:5672/ 
+YLEM_API_URL=https://api.ylem.co
+YLEM_API_CLIENT_ID=be48d317-924c-4b1c-809a-026638e447b7
+YLEM_API_CLIENT_SECRET=cfa9dd5e33cd8b2f0f604d94b5gggipgyggggguje2cefb
+QUEUE_NAME=ylem_queue
+PIPELINE_UUID=2c334d54-c807-4629-99eb-a4def2455557
 ```
 
 ## Run the service
@@ -52,13 +52,13 @@ In this case you can run the consumer container only:
 ```
 docker run -itd --rm \
   -e AMQP_SERVER_URL='%YOUR_AMQP_SERVER_URL%' \
-  -e DATAMIN_API_URL='%DATAMIN_API_URL%' \
-  -e DATAMIN_API_CLIENT_ID='%DATAMIN_API_CLIENT_ID%' \
-  -e DATAMIN_API_CLIENT_SECRET='%DATAMIN_API_CLIENT_SECRET%' \
+  -e YLEM_API_URL='%YLEM_API_URL%' \
+  -e YLEM_API_CLIENT_ID='%YLEM_API_CLIENT_ID%' \
+  -e YLEM_API_CLIENT_SECRET='%YLEM_API_CLIENT_SECRET%' \
   -e QUEUE_NAME='%QUEUE_NAME%' \
-  -e WORKFLOW_UUID='%WORKFLOW_UUID%' \
-	--network=datamin-rabbitmq-consumer_datamin-rmq-network   \
-	datamin-rabbitmq-consumer-datamin-consumer
+  -e PIPELINE_UUID='%PIPELINE_UUID%' \
+	--network=ylem-rabbitmq-consumer_ylem-rmq-network   \
+	ylem-rabbitmq-consumer-ylem-consumer
 ```
 
 Using the same command you can run more containers with consumers listening to the same or other queues.
