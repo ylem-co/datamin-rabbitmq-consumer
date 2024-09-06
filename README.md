@@ -5,7 +5,7 @@ Golang-based RabbitMQ consumer to consume messages from your queues, forward mes
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/ylem-co/ylem-rabbitmq-consumer?color=black)
 <a href="https://github.com/datamin-io/datamin-rabbitmq-consumer?tab=Apache-2.0-1-ov-file">![Static Badge](https://img.shields.io/badge/license-Apache%202.0-black)</a>
 <a href="https://ylem.co" target="_blank">![Static Badge](https://img.shields.io/badge/website-ylem.co-black)</a>
-<a href="https://docs.datamin.io" target="_blank">![Static Badge](https://img.shields.io/badge/documentation-docs.datamin.io-black)</a>
+<a href="https://docs.ylem.co" target="_blank">![Static Badge](https://img.shields.io/badge/documentation-docs.ylem.co-black)</a>
 <a href="https://join.slack.com/t/ylem-co/shared_invite/zt-2nawzl6h0-qqJ0j7Vx_AEHfnB45xJg2Q" target="_blank">![Static Badge](https://img.shields.io/badge/community-join%20Slack-black)</a>
 
 # Usage
